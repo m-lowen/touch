@@ -1,0 +1,13 @@
+<%= render :partial => 'errors', :locals => {:contact => @contact} %>
+
+<br/><br/>
+
+<div class="new_contact_wrapper">
+<%= render :partial => 'form', :locals => {:contact => @contact} %>
+</div>
+
+<table class="contacts_list">
+<% @contacts.each do |contact| %>
+  <%= render partial: "contact", locals: {contact: contact} %>
+<% end %>
+</table>
