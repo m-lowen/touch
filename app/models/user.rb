@@ -5,4 +5,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :contacts, dependent: :destroy
+
+  after_create :send_sign_up_email
+
+  protected
+
+  def send_sign_up_email
+  	UserMailer.welcome_email(self).deliver_now
+  end
+
 end
