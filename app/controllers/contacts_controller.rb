@@ -41,7 +41,7 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params["contact"].permit(:name, :email, :company, :notes).merge(:user => current_user)
+    params["contact"].permit(:name, :email, :company, :notes, :reminder).merge(:user => current_user)
   end
 
   def load_new_contact
