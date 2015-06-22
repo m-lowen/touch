@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150622131337) do
+ActiveRecord::Schema.define(version: 20150622145950) do
 
   create_table "contacts", force: :cascade do |t|
     t.datetime "created_at",   null: false
@@ -22,7 +22,12 @@ ActiveRecord::Schema.define(version: 20150622131337) do
     t.string   "company"
     t.datetime "last_contact"
     t.text     "notes"
-    t.datetime "reminder"
+  end
+
+  create_table "reminders", force: :cascade do |t|
+    t.integer  "contact_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
