@@ -3,8 +3,11 @@
   <%= f.text_area :email, :placeholder => "Email" %>
   <%= f.text_area :company, :placeholder => "Company" %>
   <%= f.text_area :notes, :placeholder => "Notes (Optional)" %>
-  <%= f.collection_select :reminder, Contact::REMINDERS, :to_s, :to_s, 
-       prompt: "When would you like a reminder?" %>
+  <select name="contact[reminder]">
+<option value="" selected="selected">When would you like a reminder?</option>
+<option value="1">1 week</option>
+<option value="2">1 month</option>
+<option value="3">3 months</option>
   <br/>
   <%= f.submit %>
 <% end %>
