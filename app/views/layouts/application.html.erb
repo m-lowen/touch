@@ -20,7 +20,7 @@
   <% end %>
 
 <% if !current_page?(root_path) && user_signed_in? %>
-    <%=link_to 'Home Page', root_path %>
+   | <%=link_to 'Home Page', root_path %>
 <% end %>
 
   <%= yield %>
