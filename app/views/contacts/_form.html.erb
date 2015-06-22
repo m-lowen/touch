@@ -3,8 +3,6 @@
   <%= f.text_area :email, :placeholder => "Email" %>
   <%= f.text_area :company, :placeholder => "Company" %>
   <%= f.text_area :notes, :placeholder => "Notes (Optional)" %>
-  <%= f.collection_select :reminder, Contact::REMINDERS, :to_s, :to_s, 
-       prompt: "When would you like a reminder?" %>
   <br/>
   <%= f.submit %>
 <% end %>
