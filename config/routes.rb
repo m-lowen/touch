@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :users, :only => [:show, :index, :edit]
 
-    resources :contacts, :only => [:index, :new, :create, :show, :edit]
+    resources :contacts, :only => [:index, :new, :create, :show, :edit, :update]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
