@@ -1,0 +1,16 @@
+ <%= form_for(@contact) do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :company %>
+      <%= f.text_field :company, class: 'form-control' %>
+
+      <%= f.label :notes %>
+      <%= f.text_field :notes, class: 'form-control' %>
+
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
