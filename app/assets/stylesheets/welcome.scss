@@ -1,3 +1,49 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+	font-family: 'Crete Round', sans-serif;
+}
+
+	.center {
+		width: 270px;
+		height: 365px;
+		position: absolute;
+		left: 50%;
+		top: 50%; 
+		margin-left: -150px;
+		margin-top: -150px;
+
+	}
+	.email {
+		text-align: center;
+		padding: 10px;
+	}
+	.password {
+		text-align: center;
+	}
+	.remember {
+		text-align: center;
+	}
+	
+	.actions {
+		text-align: center;
+	}
+	.links {
+		text-align: center;
+	}
+	.networker {
+		text-align: center;
+		font-size: 50px;
+		padding: 1px; 
+		line-height: 0.9;
+	}
+
+	.suit_icon {
+		padding: 1;
+    	width: 255px;
+    	margin-right: auto;
+		margin-left: auto;
+	}
+
+	/* this centers the placeholder text */
+	::-webkit-input-placeholder {
+		text-align: center;
+	}
