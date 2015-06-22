@@ -2,8 +2,9 @@ class ContactsController < ApplicationController
 
   before_action :load_contacts, :only => [:index, :show, :create]
   before_action :load_new_contact, :only => [:index, :new]
-
+  before_action :authenticate_user!
   def index
+
   end
 
   def new
@@ -47,7 +48,7 @@ class ContactsController < ApplicationController
   end
 
   def load_contacts
-    @contacts = Contact.all
+    @contacts = current_user.contacts
   end
 
 end
