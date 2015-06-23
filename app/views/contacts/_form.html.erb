@@ -1,13 +1,27 @@
 <%= form_for(contact, {:url => "/contacts", :html => {:class => 'contact_form'}}) do |f| %>
-  <%= f.text_area :name, :placeholder => "Name" %>
-  <%= f.text_area :email, :placeholder => "Email" %>
-  <%= f.text_area :company, :placeholder => "Company" %>
-  <%= f.text_area :notes, :placeholder => "Notes (Optional)" %>
+  <%= f.text_field :name, :placeholder => "Name", class:"form-control" %> <br>
+  <%= f.text_field :email, :placeholder => "Email", class:"form-control" %> <br>
+  <%= f.text_field :company, :placeholder => "Company", class:"form-control" %> <br>
+  <%= f.text_area :notes, :placeholder => "Notes (jot down some interesting tidbits you learned about this contact)", class:"form-control" %> <br>
+
+	<!-- <div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Action <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div> -->
+
   <select name="contact[reminder]">
-<option value="" selected="selected">When would you like a reminder?</option>
-<option value="1">1 week</option>
-<option value="2">1 month</option>
-<option value="3">3 months</option>
-  <br/>
-  <%= f.submit %>
+  <option value="" selected="selected">When would to be reminded?</option>
+  <option value="1">1 week</option>
+  <option value="2">1 month</option>
+  <option value="3">3 months</option> 
+
+<%= f.submit %>
 <% end %>
