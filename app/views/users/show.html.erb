@@ -29,41 +29,30 @@
 </div> -->
 
 
- <div class="container">
+<div class="container">
 	<div class="row">
 		<div class="col-sm-6">
 			<h2>Add Contact</h2>
 			<%= render :partial => 'contacts/form', :locals => {:contact => @contact} %>
 			<ul>
-			  <% @contacts.each do |contact| %>
-			    <li><%= link_to contact.name, contact_path(contact.id) %>
-			  <% end %>
-			</ul>
+				<% @contacts.each do |contact| %>
+				<li><%= link_to contact.name, contact_path(contact.id) %>
+					<% end %>
+				</ul>
+			</div>
+			<div class="col-sm-6">
+				<%= render :partial => '/users/reminders', :locals => {:contact => @contact} %>
+			</div>
 		</div>
-		<div class="col-sm-6">
-			<h2>Upcoming Reminders</h2>
+		<div class="row">
+			<div class="col-sm-4">
+				section 3
+			</div>
+			<div class="col-sm-4">
+				section 4
+			</div>
+			<div class="col-sm-4">
+				a;lsdjkf
+			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-sm-4">
-			section 3
-		</div>
-		<div class="col-sm-4">
-			section 4
-		</div>
-		<div class="col-sm-4">
-			a;lsdjkf
-		</div>
-	</div>
-</div>
-
-<<<<<<< HEAD
-=======
-<ul>
-<% @contacts.each do |contact| %>
-<li><%= link_to contact.name, contact_path(contact.id) %></li>
-<% end %>
-</ul>
-
-<%= render :partial => '/users/reminders', :locals => {:contact => @contact} %>
->>>>>>> f3569d7e90e20194e11ba44eb69520071326a549
