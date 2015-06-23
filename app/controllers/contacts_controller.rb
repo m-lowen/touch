@@ -28,7 +28,7 @@ class ContactsController < ApplicationController
       end
 
     if @contact.save
-      redirect_to '/contacts'
+      redirect_to user_path(current_user)
     else
       render :index
     end
@@ -41,6 +41,15 @@ class ContactsController < ApplicationController
   def update
     @contact = Contact.find(params[:id]).update_attributes(contact_params)
     redirect_to contact_path
+  end
+
+  def destroy
+    @contact = Contact.find(params[:id])
+    @contact.destroy
+
+    flash[:notice] = "Your contact was deleted successfully."
+
+    redirect_to user_path(current_user)
   end
 
 
