@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-  
+
   before_filter :configure_permitted_parameters
 
   protected
@@ -16,5 +16,10 @@ class RegistrationsController < Devise::RegistrationsController
         :email, :password, :password_confirmation)
     end
   end
+
+  def after_sign_up_path_for(resource)
+    user_path(current_user)
+  end
+
 
 end
