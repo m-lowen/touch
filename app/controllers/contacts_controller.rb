@@ -19,6 +19,13 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
+      if @contact.reminder == "1"
+        @contact.reminder_date = (Date.today + 1.week)
+      elsif @contact.reminder == "2"
+        @contact.reminder_date = (Date.today + 1.month)
+      else
+        @contact.reminder_date = (Date.today + 3.months)
+      end
 
     if @contact.save
       redirect_to '/contacts'
@@ -41,7 +48,7 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params["contact"].permit(:name, :email, :company, :notes, :reminder).merge(:user => current_user)
+    params["contact"].permit(:name, :email, :company, :notes, :reminder, :reminder_date).merge(:user => current_user)
   end
 
   def load_new_contact
