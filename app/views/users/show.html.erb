@@ -3,7 +3,9 @@
 <%= render :partial => 'contacts/form', :locals => {:contact => @contact} %>
 
 <ul>
-  <% @contacts.each do |contact| %>
-    <li><%= link_to contact.name, contact_path(contact.id) %>
-  <% end %>
+<% @contacts.each do |contact| %>
+<li><%= link_to contact.name, contact_path(contact.id) %></li>
+<% end %>
 </ul>
+
+<%= render :partial => '/users/reminders', :locals => {:contact => @contact} %>
