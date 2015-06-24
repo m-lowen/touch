@@ -14,7 +14,7 @@ task :fetch_emails => :environment do
 	user_email = ""
 	body = ""
 	date = ""
-	gmail_ids = []
+	gmail_ids =[]
 
 	Email.all.each do |e|
 		gmail_ids << e.gmail_id
@@ -31,7 +31,7 @@ task :fetch_emails => :environment do
 			body = imap.fetch(message_id,'BODY[TEXT]').first.attr['BODY[TEXT]']
 			File.write('lib/assets/email.eml', body)
 			body = Mail.read('lib/assets/email.eml')
-			puts body.multipart?
+	
 			body = body.body.decoded
 			body = body.split(/--001/).first
 			puts body
