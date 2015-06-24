@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   :omniauthable, :omniauth_providers => [:google_oauth2]
 
   has_many :contacts, dependent: :destroy
+  has_many :reminders, through: :contacts
   after_create :send_sign_up_email
 
   def self.from_omniauth(auth)

@@ -36,7 +36,7 @@ class ContactsController < ApplicationController
       if params["reminder"].include? "4"
        @reminder = Reminder.new(:contact_id => @contact.id, :date => (Date.today + 6.months))
        @reminder.save
-     end
+      end
      redirect_to user_path(current_user)
    else
     render :index
