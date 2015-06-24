@@ -8,26 +8,28 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="/" >Home</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-      </ul>
+      <!-- <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Add Contact<span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Add Contact</a></li>
+      </ul> -->
+      <div class="navbar-text-helper"></div>
+      <p class="navbar-text">[networker]</p>
       
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <li><%= link_to 'Add Contact', new_contact_path %></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><%=link_to 'Edit Profile', edit_user_registration_path %></li>
+            <!-- <li><a href="#">Sign Out</a></li>
+            <li><a href="#">Something else here</a></li> -->
             <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><%=link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
           </ul>
         </li>
       </ul>
