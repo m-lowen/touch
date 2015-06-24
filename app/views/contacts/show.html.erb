@@ -24,4 +24,6 @@
 </table>
 </div>
 
+<%= render partial: "emails", locals: {contact: @contact, emails: @emails}  %>
+
 <%= render partial: "template", locals: {contact: @contact} %>
