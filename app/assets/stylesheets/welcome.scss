@@ -1,7 +1,12 @@
 body {
 	font-family: 'Open Sans', sans-serif;
+	/*background-image: url("aaron_pic.jpg");
+	background-size: cover;*/
 }
-
+.britt {
+	background-color: #fff;
+    background-color: rgba(255,255,255,0.5);
+}
 .center {
 	width: 270px;
 	height: 365px;
@@ -11,6 +16,13 @@ body {
 	margin-left: -150px;
 	margin-top: -150px;
 
+}
+.panel-heading {
+	text-align: center;
+    u {
+    text-decoration: none;
+    /*border-bottom: 1px solid black;*/
+    }
 }
 .email {
 	text-align: center;
