@@ -4,12 +4,34 @@
   <%= f.text_field :company, :placeholder => "Company", class:"form-control" %> <br>
   <%= f.text_area :notes, :placeholder => "Notes (jot down some interesting tidbits you learned about this contact)", class:"form-control" %> <br>
 
-<!-- TODO: MAKE THIS FUCKING DUMBASS HTML FORM NOT LOOK LIKE ABSOLUTE SHIT. GOOD FUCKING LUCK -->
-  <select name="contact[reminder]">
+<div class="row">
+  <div class="col-sm-6">
+    <div class="input-group">
+      <span class="input-group-addon">
+        <input type="checkbox" value="1" name="reminder[]">
+      </span>
+      <input type="text" class="form-control" value="Remind me in a week" aria-label="..." readonly>
+    </div><!-- /input-group -->
+    <div class="input-group">
+      <span class="input-group-addon">
+        <input type="checkbox" value="2" name="reminder[]">
+      </span>
+      <input type="text" class="form-control" value="Remind me in a month" aria-label="..." readonly>
+    </div><!-- /input-group -->
+    <div class="input-group">
+      <span class="input-group-addon">
+        <input type="checkbox" value="3" name="reminder[]">
+      </span>
+      <input type="text" class="form-control" value="Remind me in a year" aria-label="..." readonly>
+    </div><!-- /input-group -->
+  </div>
+</div>
+
+<!--   <select name="contact[reminder]">
   <option value="" selected="selected">When would like to be reminded?</option>
   <option value="1">1 week</option>
   <option value="2">1 month</option>
-  <option value="3">3 months</option> 
+  <option value="3">3 months</option>  -->
 
-<%= f.submit %>
+<%= f.submit :class => 'form-control' %>
 <% end %>

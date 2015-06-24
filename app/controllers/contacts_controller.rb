@@ -18,14 +18,17 @@ class ContactsController < ApplicationController
 
 
   def create
+    binding.pry
     @contact = Contact.new(contact_params)
-      if @contact.reminder == "1"
+    if params["reminder"].include? "1"
+      # if @contact.reminder == "1"
+      # TODO: Change so a contact can have multiple reminder dates
         @contact.reminder_date = (Date.today + 1.week)
-      elsif @contact.reminder == "2"
+    elsif params["reminder"].include? "2"
         @contact.reminder_date = (Date.today + 1.month)
-      else
+    elsif params["reminder"].include? "3"
         @contact.reminder_date = (Date.today + 3.months)
-      end
+    end
 
     if @contact.save
       redirect_to user_path(current_user)

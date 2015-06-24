@@ -42,13 +42,14 @@
 				<li><%= link_to contact.name, contact_path(contact.id) %>
 					<% end %>
 			</ul>
-			</div>
+		</div>
 
 			<!-- puts "upcoming reminders" in same row -->
-			<div class="col-sm-6">
+		<div class="col-sm-6">
 				<%= render :partial => '/users/reminders', :locals => {:contact => @contact} %>
-			</div>
 		</div>
+	</div>
+</div>
 		<!-- <div class="row">
 			<div class="col-sm-4">
 				section 3
