@@ -27,7 +27,7 @@ task :fetch_emails => :environment do
 		message_ids.each do |message_id|
 
 			envelope = imap.fetch(message_id, "ENVELOPE").first
-			
+			x=0
 			body = imap.fetch(message_id,'BODY[TEXT]').first.attr['BODY[TEXT]']
 			File.write('lib/assets/email.eml', body)
 			body = Mail.read('lib/assets/email.eml')
@@ -42,13 +42,16 @@ task :fetch_emails => :environment do
 
 			user_email = "#{username}@#{domain}"
 			date = envelope.attr["ENVELOPE"].date
-
+			x=x+1
 			user = User.find_by_email(user_email)
 			contacts_size = user.contacts.size
 
-			user.contacts.each do |c|
-				if body.match(/#{c.name}/)
-					Email.create(contact_id: c.id, body: body, date: date, gmail_id: gmail_id) unless gmail_ids.include? gmail_id
+			if !(user.nil?)
+				user.contacts.each do |c|
+			
+					if body.match(/#{c.name}/)
+						Email.create(contact_id: c.id, body: body, date: date, gmail_id: gmail_id) unless gmail_ids.include? gmail_id
+					end
 				end
 			end
 		end
