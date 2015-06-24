@@ -7,6 +7,8 @@ This means we need to make 1, 2, and 3 correspond to actual dates and have it up
 
 <ol>
 <% @contacts.each do |contact| %>
-<li><%= "#{contact.reminder_date}: #{contact.name}" %></li>
+<% contact.reminders.each do |reminder| %>
+<li><%= "#{Contact.find(reminder.contact_id).name} : #{reminder.date}" %></li>
+<% end %>
 <% end %>
 </ol>

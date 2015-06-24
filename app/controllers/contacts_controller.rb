@@ -18,57 +18,63 @@ class ContactsController < ApplicationController
 
 
   def create
-    binding.pry
     @contact = Contact.new(contact_params)
-    if params["reminder"].include? "1"
-      # if @contact.reminder == "1"
-      # TODO: Change so a contact can have multiple reminder dates
-        @contact.reminder_date = (Date.today + 1.week)
-    elsif params["reminder"].include? "2"
-        @contact.reminder_date = (Date.today + 1.month)
-    elsif params["reminder"].include? "3"
-        @contact.reminder_date = (Date.today + 3.months)
-    end
 
     if @contact.save
-      redirect_to user_path(current_user)
-    else
-      render :index
-    end
+      if params["reminder"].include? "1"
+        @reminder = Reminder.new(:contact_id => @contact.id, :date => (Date.today + 1.week))
+        @reminder.save
+      end
+      if params["reminder"].include? "2"
+        @reminder = Reminder.new(:contact_id => @contact.id, :date => (Date.today + 1.month))
+        @reminder.save
+      end
+      if params["reminder"].include? "3"
+        @reminder = Reminder.new(:contact_id => @contact.id, :date => (Date.today + 3.months))
+        @reminder.save
+      end
+      if params["reminder"].include? "4"
+       @reminder = Reminder.new(:contact_id => @contact.id, :date => (Date.today + 6.months))
+       @reminder.save
+     end
+     redirect_to user_path(current_user)
+   else
+    render :index
   end
+end
 
-  def edit
-    @contact = Contact.find(params[:id])
-  end
+def edit
+  @contact = Contact.find(params[:id])
+end
 
-  def update
-    @contact = Contact.find(params[:id]).update_attributes(contact_params)
-    redirect_to contact_path
-  end
+def update
+  @contact = Contact.find(params[:id]).update_attributes(contact_params)
+  redirect_to contact_path
+end
 
-  def destroy
-    @contact = Contact.find(params[:id])
-    @contact.destroy
+def destroy
+  @contact = Contact.find(params[:id])
+  @contact.destroy
 
-    flash[:notice] = "Your contact was deleted successfully."
+  flash[:notice] = "Your contact was deleted successfully."
 
-    redirect_to user_path(current_user)
-  end
+  redirect_to user_path(current_user)
+end
 
 
 
-  private
+private
 
-  def contact_params
-    params["contact"].permit(:name, :email, :company, :notes, :reminder, :reminder_date).merge(:user => current_user)
-  end
+def contact_params
+  params["contact"].permit(:name, :email, :company, :notes, :reminder, :reminder_date, :reminder_date_2, :reminder_date_3, :reminder_date_4).merge(:user => current_user)
+end
 
-  def load_new_contact
-    @contact = Contact.new
-  end
+def load_new_contact
+  @contact = Contact.new
+end
 
-  def load_contacts
-    @contacts = current_user.contacts
-  end
+def load_contacts
+  @contacts = current_user.contacts
+end
 
 end
