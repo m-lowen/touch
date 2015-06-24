@@ -18,7 +18,7 @@ class ContactsController < ApplicationController
 
 
   def create
-    binding.pry
+    # binding.pry
     @contact = Contact.new(contact_params)
     if params["reminder"].include? "1"
       # if @contact.reminder == "1"
@@ -28,6 +28,8 @@ class ContactsController < ApplicationController
         @contact.reminder_date = (Date.today + 1.month)
     elsif params["reminder"].include? "3"
         @contact.reminder_date = (Date.today + 3.months)
+    elsif params["reminder"].include? "4"
+        @contact.reminder_date = (Date.today + 6.months)
     end
 
     if @contact.save
