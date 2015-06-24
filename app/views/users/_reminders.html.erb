@@ -1,12 +1,10 @@
-<!-- TODO: Make this update each day with a list of the reminders coming up soonest.
-This means we need to make 1, 2, and 3 correspond to actual dates and have it update automatically every day. -->
 
 <h2>Upcoming Reminders:</h2>
 
 
 
 <ol>
-<% @contacts.each do |contact| %>
-<li><%= "#{contact.reminder_date}: #{contact.name}" %></li>
-<% end %>
+	<% @user.reminders.order(:date).each do |reminder| %>
+	<li><%= "#{Contact.find(reminder.contact_id).name}: #{reminder.date.strftime("%a, %B %d, %Y")}"  %></li>
+	<% end %>
 </ol>
