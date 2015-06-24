@@ -7,6 +7,7 @@ gem 'omniauth-google-oauth2'
 gem 'certified'
 gem 'rubysl-net-imap'
 
+
 gem 'devise', '~> 3.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
