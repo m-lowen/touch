@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150624151357) do
-=======
-ActiveRecord::Schema.define(version: 20150624115522) do
->>>>>>> 7d0b73325cf15eae61976e98abb4c722f2adfa64
 
   create_table "contacts", force: :cascade do |t|
     t.datetime "created_at",    null: false
