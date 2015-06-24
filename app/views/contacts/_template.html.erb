@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html>
+
 <body>
 
-<textarea rows="10" cols="75">
+<textarea rows="10" id='fe_text' cols="75"> 
 Dear <%=contact.name%>,
 
 It was a pleasure meeting you, ***britt say something interesting stuff here that people will like***
 
 Sincerely,
 <%=contact.user.name%>
-</textarea>
+</textarea><br/>
+<button class='my_clip_button' data-clipboard-target='fe_text' data-clipboard-text='Default clipboard text from attribute' id='d_clip_button' title='Click me to copy to clipboard.'>
+    <b>Copy To Clipboard...</b>
+  </button>
+<a href='https://mail.google.com/mail/u/0/#inbox?compose=new'>Send Email</a>
 
 </body>
+
+<script>
+  $(document).ready(function() {
+    var clip = new ZeroClipboard($("#d_clip_button"))
+  });
+
+  $("#clear-test").on("click", function(){
+    $("#fe_text").val("Copy me!");
+    $("#testarea").val("");
+  });
+</script>
+
 </html>

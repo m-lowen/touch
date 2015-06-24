@@ -2,6 +2,13 @@ source 'https://rubygems.org'
 
 gem 'bootstrap-sass'
 
+gem 'omniauth', '~> 1.2.2'
+gem 'omniauth-google-oauth2'
+gem 'certified'
+gem 'rubysl-net-imap'
+gem 'zeroclipboard-rails'
+
+
 gem 'devise', '~> 3.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
@@ -39,6 +46,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'better_errors'
   gem 'quiet_assets'
+
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
