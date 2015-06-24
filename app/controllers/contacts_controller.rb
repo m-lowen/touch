@@ -49,7 +49,27 @@ def edit
 end
 
 def update
-  @contact = Contact.find(params[:id]).update_attributes(contact_params)
+  @contact = Contact.find(params[:id])
+  @contact.update_attributes(contact_params)
+  @contact.reminders.each do |reminder|
+    reminder.destroy
+  end
+  if params["reminder"].include? "1"
+        @reminder = Reminder.new(:contact_id => @contact.id, :date => (Date.today + 1.week))
+        @reminder.save
+      end
+      if params["reminder"].include? "2"
+        @reminder = Reminder.new(:contact_id => @contact.id, :date => (Date.today + 1.month))
+        @reminder.save
+      end
+      if params["reminder"].include? "3"
+        @reminder = Reminder.new(:contact_id => @contact.id, :date => (Date.today + 3.months))
+        @reminder.save
+      end
+      if params["reminder"].include? "4"
+       @reminder = Reminder.new(:contact_id => @contact.id, :date => (Date.today + 6.months))
+       @reminder.save
+      end
   redirect_to contact_path
 end
 
