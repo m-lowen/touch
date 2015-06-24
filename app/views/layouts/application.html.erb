@@ -9,10 +9,10 @@
 </head>
 <body>
 
+
 <div id="container">
   <!-- TODO: comment these out before we demo because they look like shit and we don't need them except for error checking -->
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <%= render partial: "alerts" %>
   <% if user_signed_in? %>
     Signed in as <%=current_user.name%> | 
     <%=link_to 'Sign Out', destroy_user_session_path, :method => :delete %> | <%=link_to 'Edit Profile', edit_user_registration_path %>

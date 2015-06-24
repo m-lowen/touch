@@ -32,30 +32,23 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-6">
-			<h2>Add Contact</h2>
-			<%= render :partial => 'contacts/form', :locals => {:contact => @contact} %>
-			<br>
-
 			<%= render :partial => '/users/contacts', :locals => {:contact => @contact} %>
+
+			<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseform" aria-expanded="false" aria-controls="collapseform">
+				Add Contact
+			</button>
+			<div class="collapse" id="collapseform">
+				<div class="well">
+					<%= render :partial => 'contacts/form', :locals => {:contact => @contact} %>
+				</div>
+			</div>
+
 
 
 			<!-- puts "upcoming reminders" in same row -->
-			</div>
+		</div>
 		<div class="col-sm-6">
-				<%= render :partial => '/users/reminders', :locals => {:contact => @contact} %>
+			<%= render :partial => '/users/reminders', :locals => {:contact => @contact} %>
 		</div>
 	</div>
 </div>
-		<!-- <div class="row">
-			<div class="col-sm-4">
-				section 3
-			</div>
-			<div class="col-sm-4">
-				section 4
-			</div>
-			<div class="col-sm-4">
-				a;lsdjkf
-			</div>
-		</div>
-	</div>
- -->
