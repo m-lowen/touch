@@ -5,6 +5,7 @@ gem 'bootstrap-sass'
 gem 'omniauth', '~> 1.2.2'
 gem 'omniauth-google-oauth2'
 gem 'certified'
+gem 'rubysl-net-imap'
 
 gem 'devise', '~> 3.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
