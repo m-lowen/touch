@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20150623102643) do
-=======
-ActiveRecord::Schema.define(version: 20150623142143) do
->>>>>>> fa4c7b0731667e9f5bfe90c6ebfb04909e933206
+ActiveRecord::Schema.define(version: 20150623194905) do
 
   create_table "contacts", force: :cascade do |t|
     t.datetime "created_at",    null: false
@@ -28,6 +24,11 @@ ActiveRecord::Schema.define(version: 20150623142143) do
     t.text     "notes"
     t.string   "reminder"
     t.datetime "reminder_date"
+  end
+
+  create_table "emails", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

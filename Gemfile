@@ -6,6 +6,7 @@ gem 'omniauth', '~> 1.2.2'
 gem 'omniauth-google-oauth2'
 gem 'certified'
 gem 'rubysl-net-imap'
+gem 'zeroclipboard-rails'
 
 
 gem 'devise', '~> 3.0'
