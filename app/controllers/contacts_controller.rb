@@ -13,6 +13,7 @@ class ContactsController < ApplicationController
 
   def show 
     @contact = Contact.find(params[:id])
+    @emails = @contact.emails
 
   end
 

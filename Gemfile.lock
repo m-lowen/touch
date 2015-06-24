@@ -208,6 +208,7 @@ DEPENDENCIES
   devise (~> 3.0)
   jbuilder (~> 2.0)
   jquery-rails
+  mail
   omniauth (~> 1.2.2)
   omniauth-google-oauth2
   pry-byebug

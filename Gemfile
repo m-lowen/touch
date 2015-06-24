@@ -7,7 +7,7 @@ gem 'omniauth-google-oauth2'
 gem 'certified'
 gem 'rubysl-net-imap'
 gem 'zeroclipboard-rails'
-
+gem 'mail'
 
 gem 'devise', '~> 3.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

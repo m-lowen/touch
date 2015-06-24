@@ -14,41 +14,44 @@ task :fetch_emails => :environment do
 	user_email = ""
 	body = ""
 	date = ""
+	gmail_ids = []
 
-	while message_size > count
+	Email.all.each do |e|
+		gmail_ids << e.gmail_id
+	end
 
-		if message_size > 0
-		
-			envelope = imap.fetch(message_ids[0], "ENVELOPE")
-			body = imap.fetch(message_ids[count],'BODY[TEXT]')[0].attr['BODY[TEXT]']
-			envelope.each do |email|
-				u = email.attr["ENVELOPE"].from[0].mailbox
-				d = email.attr["ENVELOPE"].from[0].host
-				user_email = "#{u}@#{d}"
-				date = email.attr["ENVELOPE"].date
-			end
+
+	if message_size == 0
+		puts "No new emails!"
+	else
+		message_ids.each do |message_id|
+
+			envelope = imap.fetch(message_id, "ENVELOPE").first
 			
+			body = imap.fetch(message_id,'BODY[TEXT]').first.attr['BODY[TEXT]']
+			File.write('lib/assets/email.eml', body)
+			body = Mail.read('lib/assets/email.eml')
+			puts body.multipart?
+			body = body.body.decoded
+			body = body.split(/--001/).first
+			puts body
+
+			username = envelope.attr["ENVELOPE"].from[0].mailbox
+			domain = envelope.attr["ENVELOPE"].from[0].host
+			gmail_id = envelope.attr["ENVELOPE"].message_id
+
+			user_email = "#{username}@#{domain}"
+			date = envelope.attr["ENVELOPE"].date
 
 			user = User.find_by_email(user_email)
 			contacts_size = user.contacts.size
 
 			user.contacts.each do |c|
-				if !(body.match(/#{c.name}/).nil?)
-					email = Email.create(contact_id: c.id, body: body, date: date)
-					contact_id = c.id 
-					puts email
+				if body.match(/#{c.name}/)
+					Email.create(contact_id: c.id, body: body, date: date, gmail_id: gmail_id) unless gmail_ids.include? gmail_id
 				end
-				# puts contact_id
 			end
-
-		
-
-
-		else puts "sorry nothing new"
 		end
-
-		count = count + 1
-		
-	end 
+	end
 
 end

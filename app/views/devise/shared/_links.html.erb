@@ -24,6 +24,7 @@
   <%- resource_class.omniauth_providers.each do |provider| %>
     <%= link_to "Sign in with Gmail", omniauth_authorize_path(resource_name, provider) %><br />
   <% end -%>
-<% end -%>
+  <% end -%>
+
 
 </div>

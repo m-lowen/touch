@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20150624115522) do
-=======
-ActiveRecord::Schema.define(version: 20150624103355) do
->>>>>>> f151a15f309dcc518cb99a947b366eabc710b77d
+ActiveRecord::Schema.define(version: 20150624151357) do
 
   create_table "contacts", force: :cascade do |t|
     t.datetime "created_at",    null: false
@@ -36,6 +32,7 @@ ActiveRecord::Schema.define(version: 20150624103355) do
     t.integer  "contact_id"
     t.text     "body"
     t.datetime "date"
+    t.string   "gmail_id"
   end
 
   create_table "reminders", force: :cascade do |t|
