@@ -1,0 +1,11 @@
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><h2>Contacts:</h2></div>
+
+  <!-- List group -->
+  <ul class="list-group">
+	<% @contacts.each do |contact| %>
+    <li class="list-group-item"><%= link_to contact.name, contact_path(contact.id) %></li>
+    <% end %>
+  </ul>
+</div>
