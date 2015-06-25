@@ -34,9 +34,14 @@
 </div>
 		<div class="row">
 
-			<div class="col-sm-6">
+			<div class="col-sm-4">
 				<%= render :partial => '/users/contacts', :locals => {:contact => @contact} %>
-				<button class="btn btn-inverse" type="button" data-toggle="collapse" data-target="#collapseform" aria-expanded="false" aria-controls="collapseform">
+				
+				<!-- puts "upcoming reminders" in same row -->
+			</div>
+			<div class="col-sm-4 new-contact-button">
+
+			<button class="btn btn-inverse" type="button" data-toggle="collapse" data-target="#collapseform" aria-expanded="false" aria-controls="collapseform">
 					Add Contact
 				</button>
 				<div class="collapse" id="collapseform">
@@ -44,11 +49,9 @@
 						<%= render :partial => 'contacts/form', :locals => {:contact => @contact} %>
 					</div>
 				</div>
-
-	
-				<!-- puts "upcoming reminders" in same row -->
+				
 			</div>
-			<div class="col-sm-6">
+			<div class="col-sm-4">
 				<%= render :partial => '/users/reminders', :locals => {:contact => @contact} %>
 			</div>
 		</div>

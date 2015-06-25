@@ -1,11 +1,11 @@
-<div class="panel">
+<div class="panel1">
   <!-- Default panel contents -->
-  <div class="panel-heading"><h1><u>Upcoming Reminders</u></h1></div>
+  <div class="panel-heading reminders_heading"><h2><u>Upcoming Reminders</u></h2></div>
 
   <!-- List group -->
   <ul class="list-group">
   <% @user.reminders.order(:date).each do |reminder| %>
-    <li class="list-group-item"><%= "#{Contact.find(reminder.contact_id).name} on #{reminder.date.strftime("%A, %B %e, %Y")}"  %></li>
+    <li class="list-group-item contacts-list"><b><%= "#{Contact.find(reminder.contact_id).name} on #{reminder.date.strftime("%A, %B %e, %Y")}"  %></b></li>
     <% end %>
   </ul>
   </div>
