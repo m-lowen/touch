@@ -2,9 +2,22 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	background-image: url("aaron_home.jpg");
 	background-size: cover;
+
 }
-.a {
-	color: rgba(0, 0, 0, 1);
+
+body.home-page {
+	background: url("aaron_home.jpg") no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+body.contacts-bg {
+	background: url("handshake.jpg") no-repeat center center fixed; 
+ 	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
 }
 .panel-header {
 	border-radius: 2px;

@@ -3,7 +3,7 @@ task :fetch_emails => :environment do
 
 
 	imap = Net::IMAP.new('imap.gmail.com', 993, usessl = true, certs = nil, verify = false)
-	if imap.login('touchtesting1', 'waterkant')
+	if imap.login('networker.app.email', 'waterkant')
 		puts true
 	end
 
