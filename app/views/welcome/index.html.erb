@@ -1,7 +1,6 @@
-<video autoplay muted id="bgvid">
+<!-- <video autoplay muted id="bgvid">
 <source src="<%= image_path("networker_video.mp4") %>" type="video/mp4">
-</video>
-
+</video> -->
 <div class="container" style="display: none;">
 	<div class="business_card">
 		<div class="center">
@@ -9,7 +8,7 @@
 				[networker] 
 			</div>
 			<div class="suit_icon">
-				<%= image_tag("networker_logo1.png", {alt: "rss feed"}) %>
+				<%= image_tag("networker_logo1.png", {alt: "NETWORKER"}) %>
 			</div>
 			<%= render file: "devise/sessions/new" %>
 		</div>
@@ -17,5 +16,5 @@
 </div>
 
 <script type="text/javascript">
-setTimeout(function(){ $('.container').fadeIn(1000); }, 6000);
+	setTimeout(function(){ $('.container').fadeIn(1000); }, 6000);
 </script>

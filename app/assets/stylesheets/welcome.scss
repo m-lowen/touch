@@ -1,8 +1,6 @@
 body {
 	font-family: 'Open Sans', sans-serif;
-	background-image: url("aaron_home.jpg");
-	background-size: cover;
-
+	background-color: rgba(255,255,255,0.8);
 }
 
 body.home-page {
@@ -13,27 +11,53 @@ body.home-page {
   	background-size: cover;
 }
 
-
-body.contacts-bg {
+body.contacts-page {
 	background: url("handshake.jpg") no-repeat center center fixed; 
  	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover;
 }
-.panel-header {
+
+.panel2 {
+	border: 1px solid black;
+ 	opacity: .9;
+ 	background-color: white;
+}
+
+.layer {
+	background-color: rgba(255,255,255,.25);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height:100%;
+	z-index: 0;
+}
+.content {
+	position: absolute;
+}
+.panel {
 	border-radius: 2px;
 	/*background-color: rgba(255, 255, 255, 1);*/
 }
+.contact-panel {
+	margin-left: 20px;
+}
+.reminder-panel {
+	margin-right: 20px;
+}
 .navbar {
   border-radius: 0;
+  z-index: 100;
 }
-.btn {
+.add-contact-button {
 	display: block;
   margin-left: auto;
   margin-right: auto;
   margin-top: 0 auto;
   margin-bottom: 0 auto;
+  background-color: rgba(255,255,255,1);
 }
 .navbar-inverse .navbar-text {
   color: #FFFFFF;
@@ -51,38 +75,53 @@ body.contacts-bg {
   font-family: 'Crete Round';
   color: #FFFFFF; 	
 }
-.new-contact-button {
+.add-contact-button {
+	padding: 0 20px;
+	border-radius: 2px;
+	box-shadow: 5px 5px 2px #000000;
 	margin: 0 auto;
 }
-.reminders-list {
-	text-align: left;
+.add-contact-button.outline {
+    background: none;
+    padding: 12px 22px;
+}
+.add-contact-button.-primary.outline {
+    border: 2px solid #0099cc;
+    color: #0099cc;
+}
+.add-contact-button-primary.outline:hover, .add-contact-button-primary.outline:focus, .add-contact-button-primary.outline:active, .add-contact-button-primary.outline.active, .open > .dropdown-toggle.add-contact-button-primary {
+    color: #33a6cc;
+    border-color: #33a6cc;
+}
+.add-contact-button-primary.outline:active, .add-contact-button-primary.outline.active {
+    border-color: #007299;
+    color: #007299;
+    box-shadow: none;
+}
+.contacts-list {
+/*	text-align: left;
 	background-color: rgba(255, 255, 255, 0);
-	border: 0;
+	border: 0;*/
 }
 .well {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 1);
   border: 0;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.3);
 }
-.contacts-list {
-	text-align: right;
+.reminders-list {
+/*	text-align: right;
 	background-color: rgba(255, 255, 255, 0);
-	border: 0;
+	border: 0;*/
 }
 .list-group {
-	/*background-color: rgba(255, 255, 255, 0);*/
+	color: rgba(0, 0, 0, 1);
 }
-.reminders_heading {
-text-align: right;
-}
-.contact_heading {
-text-align: left;	
-}
+
 .business_card {
   width: 572px;
   height: 333px;
@@ -98,6 +137,7 @@ text-align: left;
     -ms-transform: rotate(-2deg);
     transform: rotate(-2deg);
 }
+
 .center {
 	width: 270px;
 	height: 270px;
@@ -107,12 +147,6 @@ text-align: left;
 	margin-left: -150px;
 	margin-top: -150px;
 
-}
-.panel-heading {
-    u {
-    text-decoration: none;
-    border-bottom: 1px solid black;
-    }
 }
 .email {
 	text-align: center;
@@ -151,23 +185,22 @@ text-align: left;
 	}
 }
 
-	/* this centers the placeholder text */
-	::-webkit-input-placeholder {
-		text-align: center;
-	}
+/* this centers the placeholder text */
+::-webkit-input-placeholder {
+	text-align: center;
+}
 
-	video#bgvid {
-		position: fixed;
-		top: 50%;
-		left: 50%;
-		min-width: 100%;
-		min-height: 100%;
-		width: auto;
-		height: auto;
-		z-index: -100;
-		-webkit-transform: translateX(-50%) translateY(-50%);
-		transform: translateX(-50%) translateY(-50%);
-		background: url(Rhatt.png) no-repeat;
-		background-size: cover;
-	}
-
+video#bgvid {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	background: url(Rhatt.png) no-repeat;
+	background-size: cover;
+}

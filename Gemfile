@@ -1,13 +1,15 @@
 source 'https://rubygems.org'
 
 gem 'bootstrap-sass'
-
+gem 'jquery-ui-rails'
 gem 'omniauth', '~> 1.2.2'
 gem 'omniauth-google-oauth2'
 gem 'certified'
 gem 'rubysl-net-imap'
 gem 'zeroclipboard-rails'
 gem 'mail'
+gem 'rufus-scheduler'
+gem 'rake'
 
 gem 'devise', '~> 3.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -42,6 +44,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 group :production do
 	gem 'pg'
+	gem 'rails_12factor'
 end
 
 

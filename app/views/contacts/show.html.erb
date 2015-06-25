@@ -1,41 +1,38 @@
-
 <div class="container">
   <div class="row">
-    <div class="col-sm-12">
-      <h2> <%=@contact.name%> </h2>
+    <div class="col-sm-4">
+      <!-- <h2> <%=@contact.name%> </h2>
 
       <%=link_to 'Edit Contact', edit_contact_path %>
-      | <%=link_to 'Delete Contact', "/contacts/#{@contact.id}", :method => :delete %>
+      | <%=link_to 'Delete Contact', "/contacts/#{@contact.id}", :method => :delete %> -->
 
-      <div class="contact_profile">
-        <div class="contact_email">
-          <%= @contact.email %>
-        </div>
-        <div class="contact_company">
-          <%= @contact.company %>
-        </div>
-        <div class="contact_notes">
-          <%= @contact.notes%>
-        </div>
-        <div class ="contact_reminder">
-          <u>Reminders:</u>
-          <ol>
-          <% @contact.reminders.each do |reminder| %>
-          <li><%= reminder.date.strftime("%A, %b %e %Y") %></li>
-          <% end %>
-        </ol>
-        </div>
-      </div>
-    </div>
+      <div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><h2><%="[#{@contact.name}]"%> </h2><br/><%=link_to 'Edit Contact', edit_contact_path %>
+      | <%=link_to 'Delete Contact', "/contacts/#{@contact.id}", :method => :delete %></div>
+  <!-- <div class="panel-body">
+    <p>Reminders:</p>
+  </div> -->
+
+  <!-- List group -->
+  <ul class="list-group">
+  <li class="list-group-item">Reminders:</li>
+  <% @contact.reminders.each do |reminder| %>
+    <li class="list-group-item"><%= reminder.date.strftime("%A, %b %e %Y") %></li>
+    <% end %>
+  </ul>
+</div>
+</div>
+<div class="col-sm-2">
+</div>
+<div class="col-sm-6">
+      <%= render partial: "template", locals: {contact: @contact} %>
+</div>
+
+</div>
   </div>
-  <br>
-  <br>
-  <div class="row">
+<br/>
+<br/>
     <div class="col-sm-6">
       <%= render partial: "emails", locals: {contact: @contact, emails: @emails}  %>
     </div>
-    <div class="col-sm-6">
-      <%= render partial: "template", locals: {contact: @contact} %>
-    </div>
-  </div>
-</div>
