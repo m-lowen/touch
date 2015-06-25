@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require zeroclipboard
 //= require bootstrap
+//= require dynamics
 //= require_tree .

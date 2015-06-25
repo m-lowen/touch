@@ -9,8 +9,7 @@
 </head>
 <body class="<%= current_action?('users', 'show') ? "home-page" : "contacts-bg" %>">
 <%= render partial: "nav" %>
-
-
+<div class="layer"></div>
 <div id="container">
   <!-- TODO: comment these out before we demo because they look like shit and we don't need them except for error checking -->
   <%= render partial: "alerts" %>
@@ -28,9 +27,7 @@
 
   <%= yield %>
 
-    
 </div>
-
 </body>
 </html>
 
