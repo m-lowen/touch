@@ -1,16 +1,61 @@
 body {
 	font-family: 'Open Sans', sans-serif;
-	/*background-image: url("aaron_pic.jpg");
-	background-size: cover;*/
+	background-image: url("aaron_pic.jpg");
+	background-size: cover;
 }
 
-.contact_info {
-	text-align: center;
+.panel-header {
+	border-radius: 2px;
+	/*background-color: rgba(255, 255, 255, 1);*/
 }
+.navbar {
+  border-radius: 0;
+}
+.btn {
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0 auto;
+  margin-bottom: 0 auto;
+}
+.navbar-inverse .navbar-text {
+  color: #FFFFFF;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.navbar-inverse .navbar-nav > li > a {
+  color: #FFFFFF;
+}
+.navbar-text {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 24px;
+  font-family: 'Crete Round';
+  color: #FFFFFF;
+}
+.new-contact-button {
+	margin: 0 auto;
+}
+.reminders-list {
+	text-align: left;
+	background-color: rgba(255, 255, 255, 0);
+	border: 0;
 
-.britt {
-	background-color: #fff;
-    background-color: rgba(255,255,255,0.5);
+}
+.contacts-list {
+	text-align: right;
+	background-color: rgba(255, 255, 255, 0);
+	border: 0;
+}
+.list-group {
+	/*background-color: rgba(255, 255, 255, 0);*/
+}
+.reminders_heading {
+text-align: right;
+}
+.contact_heading {
+text-align: left;	
 }
 .center {
 	width: 270px;
@@ -23,10 +68,9 @@ body {
 
 }
 .panel-heading {
-	text-align: center;
     u {
     text-decoration: none;
-    /*border-bottom: 1px solid black;*/
+    border-bottom: 1px solid black;
     }
 }
 .email {
