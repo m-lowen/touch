@@ -16,4 +16,5 @@
 //= require jquery-ui
 //= require zeroclipboard
 //= require bootstrap
+//= require dynamics
 //= require_tree .
