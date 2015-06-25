@@ -8,8 +8,9 @@
   
 </head>
 <body class="<%= current_action?('users', 'show') ? "home-page" : "contacts-bg" %>">
-<%= render partial: "nav" %>
-
+  <% if user_signed_in? %>
+    <%= render partial: "nav" %>
+  <%end%>
 
 <div id="container">
   <!-- TODO: comment these out before we demo because they look like shit and we don't need them except for error checking -->

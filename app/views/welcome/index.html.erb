@@ -1,19 +1,21 @@
 <video autoplay muted id="bgvid">
-<source src="<%= image_path("naked_lap.mp4") %>" type="video/mp4">
+<source src="<%= image_path("networker_video.mp4") %>" type="video/mp4">
 </video>
 
 <div class="container" style="display: none;">
-	<div class="center">
-		<div class="networker"> 
-			[networker] 
+	<div class="business_card">
+		<div class="center">
+			<div class="networker"> 
+				[networker] 
+			</div>
+			<div class="suit_icon">
+				<%= image_tag("networker_logo1.png", {alt: "rss feed"}) %>
+			</div>
+			<%= render file: "devise/sessions/new" %>
 		</div>
-		<div class="suit_icon">
-			<%= image_tag("networker_logo1.png", {alt: "rss feed"}) %>
-		</div>
-		<%= render file: "devise/sessions/new" %>
 	</div>
 </div>
 
 <script type="text/javascript">
-setTimeout(function(){ $('.container').fadeIn(1500); }, 5000);
+setTimeout(function(){ $('.container').fadeIn(1000); }, 6000);
 </script>
