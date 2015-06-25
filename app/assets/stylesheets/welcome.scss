@@ -1,8 +1,18 @@
 body {
 	font-family: 'Open Sans', sans-serif;
-	background-image: url("aaron_home.jpg");
+	background-image: image-url("aaron_home.jpg");
 	background-size: cover;
 
+}
+.panel2 {
+	border: 1px solid black;
+ 	opacity: .9;
+ 	background-color: white;
+}
+.email-template {
+	margin-top: -200px;
+  margin-bottom: 0px;
+  height: 220px;
 }
 
 body.home-page {
@@ -152,3 +162,4 @@ text-align: left;
 		background: url(Rhatt.png) no-repeat;
 		background-size: cover;
 	}
+
