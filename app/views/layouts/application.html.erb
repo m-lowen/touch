@@ -5,29 +5,36 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  
 </head>
-<body class="<%= current_action?('users', 'show') ? "home-page" : "contacts-bg" %>">
-<%= render partial: "nav" %>
-<div class="layer"></div>
-<div id="container">
-  <!-- TODO: comment these out before we demo because they look like shit and we don't need them except for error checking -->
-  <%= render partial: "alerts" %>
-  <% if false %>
+
+
+<% body_class = "" %>
+<% body_class = "home-page" if current_action?('users', 'show') %>
+<% body_class = "contacts-page" if current_action?('contacts', 'show') %>
+
+<body class="<%= body_class %>">
+
   <% if user_signed_in? %>
-    Signed in as <%=current_user.name%> | 
-    <%=link_to 'Sign Out', destroy_user_session_path, :method => :delete %> | <%=link_to 'Edit Profile', edit_user_registration_path %>
-  <% else %>
-  <% end %>
+    <%= render partial: "nav" %>
+  <div class="layer"></div>
+  <%end%>
 
-<% if !current_page?(root_path) && user_signed_in? %>
-   | <%=link_to 'Home Page', root_path %>
-<% end %>
-<%end%>
+  <div id="container">
+    <!-- TODO: comment these out before we demo because they look like shit and we don't need them except for error checking -->
+    <%= render partial: "alerts" %>
+    <% if false %>
+      <% if user_signed_in? %>
+      Signed in as <%=current_user.name%> | 
+      <%=link_to 'Sign Out', destroy_user_session_path, :method => :delete %> | <%=link_to 'Edit Profile', edit_user_registration_path %>
+      <% else %>
+      <% end %>
 
-  <%= yield %>
-
-</div>
+      <% if !current_page?(root_path) && user_signed_in? %>
+      | <%=link_to 'Home Page', root_path %>
+      <% end %>
+    <% end %>
+    <%= yield %>
+  </div>
 </body>
 </html>
 

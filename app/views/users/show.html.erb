@@ -1,43 +1,23 @@
-
 <div class="container">
-
-</div>
-		<div class="row">
-
-			<div class="col-sm-4">
-				<%= render :partial => '/users/contacts', :locals => {:contact => @contact} %>
-				
-				<!-- puts "upcoming reminders" in same row -->
-			</div>
-			<div class="col-sm-4 new-contact-button">
-
-			<button class="btn add-contact-button" type="button" data-toggle="collapse" data-target="#collapseform" aria-expanded="false" aria-controls="collapseform">
-					<h2>Add Contact <b>+</b></h2>
-				</button>
-				<div class="collapse" id="collapseform">
-					<div class="well">
-						<%= render :partial => 'contacts/form', :locals => {:contact => @contact} %>
-					</div>
-				</div>
-
-				
-			</div>
-			<div class="col-sm-4">
-				<%= render :partial => '/users/reminders', :locals => {:contact => @contact} %>
-			</div>
+	<div class="row">
+		<div class="col-sm-4">
+			<%= render :partial => '/users/contacts', :locals => {:contact => @contact} %>
+			<!-- puts "upcoming reminders" in same row -->
 		</div>
+		<div class="col-sm-4">
+			<button class="btn add-contact-button" type="button" data-toggle="collapse" data-target="#collapseform" aria-expanded="false" aria-controls="collapseform">
+				<h2>Add Contact <b>+</b></h2>
+			</button>
+			<div class="collapse" id="collapseform">
+				<div class="well">
+					<%= render :partial => 'contacts/form', :locals => {:contact => @contact} %>
+				</div>
+			</div>
+
+			
+		</div>
+		<div class="col-sm-4">
+			<%= render :partial => '/users/reminders', :locals => {:contact => @contact} %>
+		</div>
+	</div>
 </div>
-// <script type="text/javascript">
-// 	$('.add-contact-button').click(function() {
-// 		dynamics.animate(document.querySelector('.new-contact-button'), {
-// 			translateY: 180
-// 			}, {
-// 		  type: dynamics.spring,
-// 		  duration: 1200,
-// 		  frequency: 68,
-// 		  friction: 145,
-// 		  anticipationSize: 67,
-// 		  anticipationStrength: 62
-// 		});
-// 	});
-// </script>

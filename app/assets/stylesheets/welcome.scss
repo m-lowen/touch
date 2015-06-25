@@ -1,14 +1,6 @@
-
 body {
 	font-family: 'Open Sans', sans-serif;
-	background-image: image-url("aaron_home.jpg");
-	background-size: cover;
-	background-color: rgba(255,255,255,0.8)
-}
-.panel2 {
-	border: 1px solid black;
- 	opacity: .9;
- 	background-color: white;
+	background-color: rgba(255,255,255,0.8);
 }
 
 body.home-page {
@@ -18,12 +10,19 @@ body.home-page {
   	-o-background-size: cover;
   	background-size: cover;
 }
-body.contacts-bg {
+
+body.contacts-page {
 	background: url("handshake.jpg") no-repeat center center fixed; 
  	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover;
+}
+
+.panel2 {
+	border: 1px solid black;
+ 	opacity: .9;
+ 	background-color: white;
 }
 
 .layer {
@@ -76,27 +75,25 @@ body.contacts-bg {
   font-family: 'Crete Round';
   color: #FFFFFF; 	
 }
-.btn {
-	padding: 10px 100px;
+.add-contact-button {
+	padding: 0 20px;
 	border-radius: 2px;
 	box-shadow: 5px 5px 2px #000000;
-}
-.new-contact-button {
 	margin: 0 auto;
 }
-.new-contact-button.outline {
+.add-contact-button.outline {
     background: none;
     padding: 12px 22px;
 }
-.new-contact-button.-primary.outline {
+.add-contact-button.-primary.outline {
     border: 2px solid #0099cc;
     color: #0099cc;
 }
-.new-contact-button-primary.outline:hover, .new-contact-button-primary.outline:focus, .new-contact-button-primary.outline:active, .new-contact-button-primary.outline.active, .open > .dropdown-toggle.new-contact-button-primary {
+.add-contact-button-primary.outline:hover, .add-contact-button-primary.outline:focus, .add-contact-button-primary.outline:active, .add-contact-button-primary.outline.active, .open > .dropdown-toggle.add-contact-button-primary {
     color: #33a6cc;
     border-color: #33a6cc;
 }
-.new-contact-button-primary.outline:active, .new-contact-button-primary.outline.active {
+.add-contact-button-primary.outline:active, .add-contact-button-primary.outline.active {
     border-color: #007299;
     color: #007299;
     box-shadow: none;
@@ -124,18 +121,29 @@ body.contacts-bg {
 .list-group {
 	color: rgba(0, 0, 0, 1);
 }
-/*.reminders_heading {
-text-align: right;
+
+.business_card {
+  width: 572px;
+  height: 333px;
+  position: absolute;
+  left: 46%;
+  top: 64%;
+  margin-left: -150px;
+  margin-top: -150px;
+  z-index: 1;
+  -webkit-transform: rotate(-2deg);
+    -moz-transform: rotate(-2deg);
+    -o-transform: rotate(-2deg);
+    -ms-transform: rotate(-2deg);
+    transform: rotate(-2deg);
 }
-.contact_heading {
-text-align: left;	
-}*/
+
 .center {
 	width: 270px;
-	height: 365px;
+	height: 270px;
 	position: absolute;
-	left: 50%;
-	top: 50%; 
+	left: 52%;
+  	top: 46%;
 	margin-left: -150px;
 	margin-top: -150px;
 
@@ -161,35 +169,38 @@ text-align: left;
 .networker {
 	font-family: 'Crete Round', serif;
 	text-align: center;
-	font-size: 50px;
+	font-size: 34px;
 	padding: 1px; 
 	line-height: 0.9;
+	color: #FFFFFF
 }
 
 .suit_icon {
 	padding: 1;
-	width: 255px;
 	margin-right: auto;
 	margin-left: auto;
+	img {
+		display: block;
+		margin: 0 auto;
+	}
 }
 
-	/* this centers the placeholder text */
-	::-webkit-input-placeholder {
-		text-align: center;
-	}
+/* this centers the placeholder text */
+::-webkit-input-placeholder {
+	text-align: center;
+}
 
-	video#bgvid {
-		position: fixed;
-		top: 50%;
-		left: 50%;
-		min-width: 100%;
-		min-height: 100%;
-		width: auto;
-		height: auto;
-		z-index: -100;
-		-webkit-transform: translateX(-50%) translateY(-50%);
-		transform: translateX(-50%) translateY(-50%);
-		background: url(Rhatt.png) no-repeat;
-		background-size: cover;
-	}
-
+video#bgvid {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	background: url(Rhatt.png) no-repeat;
+	background-size: cover;
+}
