@@ -5,7 +5,7 @@
   <!-- List group -->
   <ul class="list-group">
 	<% @contacts.each do |contact| %>
-    <li class="list-group-item reminders-list"><b><%= link_to contact.name, contact_path(contact.id) %></b></li>
+    <li class="list-group-item contacts-list"><b><%= link_to contact.name, contact_path(contact.id) %></b></li>
     <% end %>
   </ul>
   </div>

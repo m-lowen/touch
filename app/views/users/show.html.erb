@@ -1,34 +1,5 @@
-<!-- <div class="container">
-	<div class="row">
-		<div class="col-sm-6">
-			<div class="row">
-				<div class="col-sm-12">
-					<h2>Left side top</h2>
-					<h2>Left side top</h2>
-					<h2>Left side top</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-12">
-					<h2>Left side bottom</h2>
-					<h2>Left side bottom</h2>
-					<h2>Left side bottom</h2>
-					<h2>Left side bottom</h2>
-					<h2>Left side bottom</h2>
-					<h2>Left side bottom</h2>
-					<h2>Left side bottom</h2>
-					<h2>Left side bottom</h2>
 
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-6">
-			<h1>Strong side</h1>
-		</div>
-	</div>
-</div> -->
-
-
+<script src="dynamics.js"></script>
 <div class="container">
 
 </div>
@@ -41,14 +12,15 @@
 			</div>
 			<div class="col-sm-4 new-contact-button">
 
-			<button class="btn btn-inverse" type="button" data-toggle="collapse" data-target="#collapseform" aria-expanded="false" aria-controls="collapseform">
-					Add Contact
+			<button class="btn btn-standard" type="button" data-toggle="collapse" data-target="#collapseform" aria-expanded="false" aria-controls="collapseform">
+					<img src="/assets/add_button.png">
 				</button>
 				<div class="collapse" id="collapseform">
 					<div class="well">
 						<%= render :partial => 'contacts/form', :locals => {:contact => @contact} %>
 					</div>
 				</div>
+
 				
 			</div>
 			<div class="col-sm-4">
