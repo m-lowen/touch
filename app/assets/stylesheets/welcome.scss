@@ -1,5 +1,8 @@
 body {
 	font-family: 'Open Sans', sans-serif;
+	background-image: url("aaron_home.jpg");
+	background-size: cover;
+
 }
 
 body.home-page {
@@ -45,7 +48,7 @@ body.contacts-bg {
   margin-bottom: 5px;
   font-size: 24px;
   font-family: 'Crete Round';
-  color: #FFFFFF;
+  color: #FFFFFF; 	
 }
 .new-contact-button {
 	margin: 0 auto;
@@ -54,7 +57,16 @@ body.contacts-bg {
 	text-align: left;
 	background-color: rgba(255, 255, 255, 0);
 	border: 0;
-
+}
+.well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 0;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 .contacts-list {
 	text-align: right;

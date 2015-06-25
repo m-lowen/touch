@@ -15,6 +15,7 @@ task :fetch_emails => :environment do
 	body = ""
 	date = ""
 	gmail_ids =[]
+	subject = ""
 
 	Email.all.each do |e|
 		gmail_ids << e.gmail_id
@@ -30,10 +31,11 @@ task :fetch_emails => :environment do
 			body = imap.fetch(message_id,'BODY[TEXT]').first.attr['BODY[TEXT]']
 			File.write('lib/assets/email.eml', body)
 			body = Mail.read('lib/assets/email.eml')
-	
 			body = body.body.decoded
-			body = body.split(/--001/).first
-			puts body
+			# Might be able to split on the first --, check more cases.
+			body = body.split(/--/).first
+
+		
 
 			username = envelope.attr["ENVELOPE"].from[0].mailbox
 			domain = envelope.attr["ENVELOPE"].from[0].host
@@ -41,11 +43,15 @@ task :fetch_emails => :environment do
 
 			user_email = "#{username}@#{domain}"
 			date = envelope.attr["ENVELOPE"].date
+			subject = envelope.attr["ENVELOPE"].subject
 			user = User.find_by_email(user_email)
+
+			puts subject
+			puts body
 
 			user &&	user.contacts.each do |c|
 				if body.match(/#{c.name}/)
-					Email.create(contact_id: c.id, body: body, date: date, gmail_id: gmail_id) unless gmail_ids.include? gmail_id
+					Email.create(contact_id: c.id, body: body, date: date, gmail_id: gmail_id, subject: subject) unless gmail_ids.include? gmail_id
 				end
 			end
 		end
