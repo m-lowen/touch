@@ -28,6 +28,7 @@ task :fetch_emails => :environment do
 		message_ids.each do |message_id|
 
 			envelope = imap.fetch(message_id, "ENVELOPE").first
+			binding.pry
 			body = imap.fetch(message_id,'BODY[TEXT]').first.attr['BODY[TEXT]']
 			File.write('lib/assets/email.eml', body)
 			body = Mail.read('lib/assets/email.eml')
