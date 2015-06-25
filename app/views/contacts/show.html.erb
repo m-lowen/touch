@@ -1,29 +1,40 @@
-<h2> <%=@contact.name%> </h2>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2> <%=@contact.name%> </h2>
 
-<%=link_to 'Edit Contact', edit_contact_path %>
- | <%=link_to 'Delete Contact', "/contacts/#{@contact.id}", :method => :delete %>
+      <%=link_to 'Edit Contact', edit_contact_path %>
+      | <%=link_to 'Delete Contact', "/contacts/#{@contact.id}", :method => :delete %>
 
-<div class="contact_profile">
-  <table>
-    <tr>
-    </tr>
-    <tr>
-     <td>
-      <div class="contact_email"><%= @contact.email %></div>
-    </td>
-    <td>
-     <div class="contact_company"><%= @contact.company %></div>
-   </td>
-   <td>
-    <div class="contact_notes"><%= @contact.notes%></div>
-  </td>
-  <td>
-  <div class ="contact_reminder"><%= @contact.reminder%></div>
-  </td>
-</tr>
-</table>
+      <div class="contact_profile">
+        <div class="contact_email">
+          <%= @contact.email %>
+        </div>
+        <div class="contact_company">
+          <%= @contact.company %>
+        </div>
+        <div class="contact_notes">
+          <%= @contact.notes%>
+        </div>
+        <div class ="contact_reminder">
+          <u>Reminders:</u>
+          <ol>
+          <% @contact.reminders.each do |reminder| %>
+          <li><%= reminder.date.strftime("%A, %b %e %Y") %></li>
+          <% end %>
+        </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-sm-6">
+      <%= render partial: "emails", locals: {contact: @contact, emails: @emails}  %>
+    </div>
+    <div class="col-sm-6">
+      <%= render partial: "template", locals: {contact: @contact} %>
+    </div>
+  </div>
 </div>
-
-<%= render partial: "emails", locals: {contact: @contact, emails: @emails}  %>
-
-<%= render partial: "template", locals: {contact: @contact} %>

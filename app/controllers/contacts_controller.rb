@@ -22,23 +22,25 @@ class ContactsController < ApplicationController
 
     @contact = Contact.new(contact_params)
     if @contact.save
-      if params["reminder"].include? "1"
-        @reminder = Reminder.new(:contact_id => @contact.id, :date => (Date.today + 1.week))
-        @reminder.save
+      if !params["reminder"].nil?
+        if params["reminder"].include? "1"
+          @reminder = Reminder.new(:contact_id => @contact.id, :date => (Date.today + 1.week))
+          @reminder.save
+        end
+        if params["reminder"].include? "2"
+          @reminder = Reminder.new(:contact_id => @contact.id, :date => (Date.today + 1.month))
+          @reminder.save
+        end
+        if params["reminder"].include? "3"
+          @reminder = Reminder.new(:contact_id => @contact.id, :date => (Date.today + 3.months))
+          @reminder.save
+        end
+        if params["reminder"].include? "4"
+         @reminder = Reminder.new(:contact_id => @contact.id, :date => (Date.today + 6.months))
+         @reminder.save
+        end
       end
-      if params["reminder"].include? "2"
-        @reminder = Reminder.new(:contact_id => @contact.id, :date => (Date.today + 1.month))
-        @reminder.save
-      end
-      if params["reminder"].include? "3"
-        @reminder = Reminder.new(:contact_id => @contact.id, :date => (Date.today + 3.months))
-        @reminder.save
-      end
-      if params["reminder"].include? "4"
-       @reminder = Reminder.new(:contact_id => @contact.id, :date => (Date.today + 6.months))
-       @reminder.save
-      end
-     redirect_to user_path(current_user)
+      redirect_to user_path(current_user)
    else
     render :index
   end
@@ -54,22 +56,24 @@ def update
   @contact.reminders.each do |reminder|
     reminder.destroy
   end
-  if params["reminder"].include? "1"
+  if !params["reminder"].nil?
+    if params["reminder"].include? "1"
         @reminder = Reminder.new(:contact_id => @contact.id, :date => (Date.today + 1.week))
         @reminder.save
-      end
-      if params["reminder"].include? "2"
-        @reminder = Reminder.new(:contact_id => @contact.id, :date => (Date.today + 1.month))
-        @reminder.save
-      end
-      if params["reminder"].include? "3"
-        @reminder = Reminder.new(:contact_id => @contact.id, :date => (Date.today + 3.months))
-        @reminder.save
-      end
-      if params["reminder"].include? "4"
-       @reminder = Reminder.new(:contact_id => @contact.id, :date => (Date.today + 6.months))
-       @reminder.save
-      end
+    end
+    if params["reminder"].include? "2"
+      @reminder = Reminder.new(:contact_id => @contact.id, :date => (Date.today + 1.month))
+      @reminder.save
+    end
+    if params["reminder"].include? "3"
+      @reminder = Reminder.new(:contact_id => @contact.id, :date => (Date.today + 3.months))
+      @reminder.save
+    end
+    if params["reminder"].include? "4"
+     @reminder = Reminder.new(:contact_id => @contact.id, :date => (Date.today + 6.months))
+     @reminder.save
+    end
+  end
   redirect_to contact_path
 end
 
