@@ -1,5 +1,13 @@
-<% @emails.each do |e| %>
-<%= e.date %>
-<br/>
-<%=	e.body %>
-<% end %>
+<div id="accordion">
+	<% @emails.each do |e| %>
+		<h3><%= e.date %></h3>
+		<div><p><%=	e.body %></p></div>
+	<% end %> 
+</div>
+<script>
+  $(function() {
+    $( "#accordion" ).accordion({
+      collapsible: true
+    });
+  });
+</script>

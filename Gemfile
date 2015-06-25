@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'bootstrap-sass'
-
+gem 'jquery-ui-rails'
 gem 'omniauth', '~> 1.2.2'
 gem 'omniauth-google-oauth2'
 gem 'certified'

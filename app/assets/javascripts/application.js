@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery-ui
 //= require zeroclipboard
 //= require bootstrap
 //= require dynamics
