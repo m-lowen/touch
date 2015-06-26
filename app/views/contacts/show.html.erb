@@ -1,38 +1,40 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
-      <!-- <h2> <%=@contact.name%> </h2>
 
-      <%=link_to 'Edit Contact', edit_contact_path %>
-      | <%=link_to 'Delete Contact', "/contacts/#{@contact.id}", :method => :delete %> -->
+        <!-- <h2> <%=@contact.name%> </h2>
+
+        <%=link_to 'Edit Contact', edit_contact_path %>
+        | <%=link_to 'Delete Contact', "/contacts/#{@contact.id}", :method => :delete %> -->
 
       <div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading"><h2><%="[#{@contact.name}]"%> </h2><br/><%=link_to 'Edit Contact', edit_contact_path %>
-      | <%=link_to 'Delete Contact', "/contacts/#{@contact.id}", :method => :delete %></div>
-  <!-- <div class="panel-body">
-    <p>Reminders:</p>
-  </div> -->
+        <!-- Default panel contents -->
+        <div class="panel-heading contact-page-person-heading"><h2><%="[#{@contact.name.downcase}]"%> <br> <%= image_tag("networker_logo_thumb2.png")%></h2> 
+        </div> <br/>
+        <%=link_to 'Edit Contact', edit_contact_path %>
+        | <%=link_to 'Delete Contact', "/contacts/#{@contact.id}", :method => :delete %></div>
+        <!-- TODO: put in rest of contact info here, i.e. company, email, etc -->
+        <!-- <div class="panel-body">
+        <p>Reminders:</p>
+        </div> -->
 
-  <!-- List group -->
-  <ul class="list-group">
-  <li class="list-group-item">Reminders:</li>
-  <% @contact.reminders.each do |reminder| %>
-    <li class="list-group-item"><%= reminder.date.strftime("%A, %b %e %Y") %></li>
-    <% end %>
-  </ul>
-</div>
-</div>
-<div class="col-sm-2">
-</div>
-<div class="col-sm-6">
-      <%= render partial: "template", locals: {contact: @contact} %>
-</div>
-
-</div>
-  </div>
-<br/>
-<br/>
+        <!-- List group -->
+        <ul class="list-group">
+        <li class="list-group-item">Reminders:</li>
+        <% @contact.reminders.each do |reminder| %>
+        <li class="list-group-item"><%= reminder.date.strftime("%A, %b %e %Y") %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div> <!-- closes col-sm-4 -->
+    <br> <br> 
+  <div class="row">
     <div class="col-sm-6">
       <%= render partial: "emails", locals: {contact: @contact, emails: @emails}  %>
     </div>
+    <div class="col-sm-6">
+      <%= render partial: "template", locals: {contact: @contact} %>
+    </div>
+  </div>
+</div>
+
