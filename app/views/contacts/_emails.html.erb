@@ -1,6 +1,6 @@
 <div id="accordion">
 	<% @emails.each do |e| %>
-		<h3><%= e.date %></h3>
+		<h3> <b> Subject: </b><%=e.subject%> <b> Sent: </b> <%= time_ago_in_words(e.date) %> ago </h3>
 		<div><p><%=	e.body %></p></div>
 	<% end %> 
 </div>

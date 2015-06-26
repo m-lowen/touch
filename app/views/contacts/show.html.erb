@@ -28,6 +28,9 @@
       </div>
     </div> <!-- closes col-sm-4 -->
     <br> <br> 
+<% if !(@contact.emails.nil?) %>
+    <h2> Notes </h2>
+    <% end %>
   <div class="row">
     <div class="col-sm-6">
       <%= render partial: "emails", locals: {contact: @contact, emails: @emails}  %>
