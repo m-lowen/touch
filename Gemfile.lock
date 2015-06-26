@@ -238,4 +238,5 @@ DEPENDENCIES
   web-console (~> 2.0)
   zeroclipboard-rails
 
-
+BUNDLED WITH
+   1.10.4
