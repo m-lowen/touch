@@ -10,22 +10,29 @@
       <div class="panel panel-default">
         <!-- Default panel contents -->
         <div class="panel-heading contact-page-person-heading"><h2><%="[#{@contact.name.downcase}]"%> <br> <%= image_tag("networker_logo_thumb2.png")%></h2> 
-        </div> <br/>
+        </div> 
+        <div class="panel-body">
+        <p><b>Company: </b><%= "#{@contact.company}" %> | <b>Email: </b> <%= "#{@contact.email}" %></p>
         <%=link_to 'Edit Contact', edit_contact_path %>
-        | <%=link_to 'Delete Contact', "/contacts/#{@contact.id}", :method => :delete %></div>
+        | <%=link_to 'Delete Contact', "/contacts/#{@contact.id}", :method => :delete %>
+        </div>
         <!-- TODO: put in rest of contact info here, i.e. company, email, etc -->
-        <!-- <div class="panel-body">
-        <p>Reminders:</p>
-        </div> -->
 
-        <!-- List group -->
+      </div>
+      </div>
+      <div class ="col-sm-2"></div>
+      <div class ="col-sm-6">
+
+      <!-- List group -->
         <ul class="list-group">
-        <li class="list-group-item">Reminders:</li>
+        <li class="list-group-item"><h2>Reminders:</h2></li>
         <% @contact.reminders.each do |reminder| %>
         <li class="list-group-item"><%= reminder.date.strftime("%A, %b %e %Y") %></li>
         <% end %>
         </ul>
+
       </div>
+
     </div> <!-- closes col-sm-4 -->
     <br> <br> 
 <% if !(@contact.emails.nil?) %>
